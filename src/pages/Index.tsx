@@ -503,10 +503,11 @@ const Index = () => {
                 <Button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-accent hover:bg-accent/90 text-white py-6 text-lg"
+                  className="w-full bg-accent hover:bg-accent/90 text-white py-4 md:py-6 text-sm md:text-lg"
                 >
-                  <Icon name="Send" className="mr-2" size={20} />
-                  {isSubmitting ? 'Отправка...' : 'Отправить запрос на коммерческое предложение'}
+                  <Icon name="Send" className="mr-2" size={18} />
+                  <span className="hidden md:inline">{isSubmitting ? 'Отправка...' : 'Отправить запрос на коммерческое предложение'}</span>
+                  <span className="md:hidden">{isSubmitting ? 'Отправка...' : 'Отправить запрос'}</span>
                 </Button>
               </form>
 
