@@ -77,16 +77,16 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 w-full bg-primary/95 backdrop-blur-sm z-50 border-b border-primary/20">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-accent rounded flex items-center justify-center">
-              <Icon name="Leaf" className="text-white" size={24} />
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-accent rounded flex items-center justify-center">
+              <Icon name="Leaf" className="text-white" size={20} />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-white">FertiGlobal Emirates</h1>
-              <p className="text-xs text-white/80">UralKhim Partner</p>
+              <h1 className="text-base md:text-xl font-bold text-white">FertiGlobal Emirates</h1>
+              <p className="text-xs text-white/80 hidden sm:block">UralKhim Partner</p>
             </div>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2 md:gap-6">
             <div className="hidden md:flex gap-6">
               <a href="#home" className="text-white hover:text-accent transition-colors">Главная</a>
               <a href="#about" className="text-white hover:text-accent transition-colors">О компании</a>
@@ -94,9 +94,10 @@ const Index = () => {
               <a href="#delivery" className="text-white hover:text-accent transition-colors">Условия</a>
               <a href="#contact" className="text-white hover:text-accent transition-colors">Контакты</a>
             </div>
-            <a href="tel:+79337776062" className="flex items-center gap-2 text-white hover:text-accent transition-colors">
-              <Icon name="Phone" size={18} />
-              <span className="font-semibold">+7 933 777 60 62</span>
+            <a href="tel:+79337776062" className="flex items-center gap-1 md:gap-2 text-white hover:text-accent transition-colors">
+              <Icon name="Phone" size={16} className="md:hidden" />
+              <Icon name="Phone" size={18} className="hidden md:block" />
+              <span className="font-semibold text-sm md:text-base">+7 933 777 60 62</span>
             </a>
           </div>
         </div>
@@ -115,28 +116,28 @@ const Index = () => {
               <div className="inline-block px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full mb-6">
                 <span className="text-accent font-semibold">🇦🇪 Поставки из ОАЭ</span>
               </div>
-              <h2 className="text-5xl font-bold mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                 Азотные удобрения<br />
                 <span className="text-accent">мирового класса</span>
               </h2>
-              <p className="text-xl mb-8 text-white/90">
+              <p className="text-lg md:text-xl mb-8 text-white/90">
                 Прямые поставки UralNitro Pro 46 от производителя УралХим через нашу компанию в Дубае
               </p>
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm p-4 rounded border border-white/20">
-                  <div className="text-3xl font-bold text-accent">46%</div>
-                  <div className="text-sm text-white/80">Азот N</div>
+              <div className="grid grid-cols-3 gap-2 md:gap-4 mb-8">
+                <div className="bg-white/10 backdrop-blur-sm p-2 md:p-4 rounded border border-white/20">
+                  <div className="text-xl md:text-3xl font-bold text-accent">46%</div>
+                  <div className="text-xs md:text-sm text-white/80">Азот N</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-4 rounded border border-white/20">
-                  <div className="text-3xl font-bold text-accent">100K</div>
-                  <div className="text-sm text-white/80">тонн/месяц</div>
+                <div className="bg-white/10 backdrop-blur-sm p-2 md:p-4 rounded border border-white/20">
+                  <div className="text-xl md:text-3xl font-bold text-accent">100K</div>
+                  <div className="text-xs md:text-sm text-white/80">тонн/месяц</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-4 rounded border border-white/20">
-                  <div className="text-3xl font-bold text-accent">20</div>
-                  <div className="text-sm text-white/80">дней FOB</div>
+                <div className="bg-white/10 backdrop-blur-sm p-2 md:p-4 rounded border border-white/20">
+                  <div className="text-xl md:text-3xl font-bold text-accent">20</div>
+                  <div className="text-xs md:text-sm text-white/80">дней FOB</div>
                 </div>
               </div>
-              <Button className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg">
+              <Button className="bg-accent hover:bg-accent/90 text-white px-4 md:px-8 py-4 md:py-6 text-sm md:text-lg w-full md:w-auto">
                 Запросить коммерческое предложение
               </Button>
             </div>
@@ -146,9 +147,9 @@ const Index = () => {
                 alt="Industrial facility"
                 className="rounded-lg shadow-2xl border-4 border-white/20"
               />
-              <div className="absolute -bottom-6 -right-6 bg-accent p-6 rounded-lg shadow-xl">
-                <div className="text-white text-2xl font-bold">От $450</div>
-                <div className="text-white/90 text-sm">за тонну FOB</div>
+              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-accent p-3 md:p-6 rounded-lg shadow-xl">
+                <div className="text-white text-lg md:text-2xl font-bold">От $450</div>
+                <div className="text-white/90 text-xs md:text-sm">за тонну FOB</div>
               </div>
             </div>
           </div>
@@ -159,7 +160,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 animate-fade-in">
-              <h2 className="text-4xl font-bold text-primary mb-4">О компании FertiGlobal Emirates</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">О компании FertiGlobal Emirates</h2>
               <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
               <p className="text-lg text-muted-foreground">
                 Официальный дистрибьютор азотных удобрений производства УралХим
@@ -230,7 +231,7 @@ const Index = () => {
       <section id="product" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl font-bold text-primary mb-4">UralNitro Pro 46</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">UralNitro Pro 46</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
             <p className="text-lg text-muted-foreground">Гранулированная карбамидная мочевина высшего качества</p>
           </div>
@@ -289,7 +290,7 @@ const Index = () => {
                   <p className="text-white/80">Универсальное азотное удобрение</p>
                 </div>
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-white/10 backdrop-blur-sm p-4 rounded">
                   <Icon name="Sprout" className="mb-3" size={32} />
                   <h4 className="font-bold mb-2">Почвенное внесение</h4>
@@ -314,18 +315,18 @@ const Index = () => {
       <section id="delivery" className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl font-bold text-primary mb-4">Условия поставки</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">Условия поставки</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
             <p className="text-lg text-muted-foreground">Прозрачные условия работы с фиксированными сроками</p>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <Card className="p-6 text-center border-t-4 border-accent hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="DollarSign" className="text-accent" size={32} />
                 </div>
-                <div className="text-4xl font-bold text-accent mb-2">$450</div>
+                <div className="text-3xl md:text-4xl font-bold text-accent mb-2">$450</div>
                 <div className="text-sm text-muted-foreground">за тонну FOB</div>
               </Card>
 
@@ -333,7 +334,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Calendar" className="text-primary" size={32} />
                 </div>
-                <div className="text-4xl font-bold text-primary mb-2">20</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">20</div>
                 <div className="text-sm text-muted-foreground">дней с момента оплаты</div>
               </Card>
 
@@ -341,7 +342,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Package" className="text-secondary" size={32} />
                 </div>
-                <div className="text-4xl font-bold text-secondary mb-2">100%</div>
+                <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">100%</div>
                 <div className="text-sm text-muted-foreground">предоплата</div>
               </Card>
             </div>
@@ -352,18 +353,18 @@ const Index = () => {
                   <div className="w-12 h-12 bg-accent/10 rounded flex items-center justify-center">
                     <Icon name="TrendingUp" className="text-accent" size={24} />
                   </div>
-                  <h3 className="text-2xl font-bold text-primary">Объемы поставок</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-primary">Объемы поставок</h3>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 p-4 bg-muted rounded">
-                    <div className="text-3xl font-bold text-accent">1</div>
+                    <div className="text-2xl md:text-3xl font-bold text-accent">1</div>
                     <div>
                       <div className="font-semibold text-primary">Первый месяц</div>
                       <div className="text-muted-foreground">50 000 тонн</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 p-4 bg-muted rounded">
-                    <div className="text-3xl font-bold text-primary">2+</div>
+                    <div className="text-2xl md:text-3xl font-bold text-primary">2+</div>
                     <div>
                       <div className="font-semibold text-primary">Последующие месяцы</div>
                       <div className="text-muted-foreground">100 000 тонн ежемесячно</div>
@@ -430,14 +431,14 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12 text-white animate-fade-in">
-              <h2 className="text-4xl font-bold mb-4">Свяжитесь с нами</h2>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4">Свяжитесь с нами</h2>
               <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
               <p className="text-lg text-white/90">Готовы обсудить условия поставки азотных удобрений</p>
             </div>
 
             <Card className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-primary mb-2">Компания *</label>
                     <Input 
@@ -459,7 +460,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-primary mb-2">Email *</label>
                     <Input 
@@ -512,7 +513,7 @@ const Index = () => {
                 </Button>
               </form>
 
-              <div className="mt-8 pt-8 border-t grid md:grid-cols-3 gap-6">
+              <div className="mt-8 pt-8 border-t grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 bg-primary/10 rounded flex items-center justify-center flex-shrink-0">
                     <Icon name="Mail" className="text-primary" size={20} />
