@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -17,6 +17,25 @@ const Index = () => {
     volume: '',
     message: ''
   });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.scroll-animate').forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -153,7 +172,7 @@ const Index = () => {
       <section id="about" className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
+            <div className="text-center mb-16 scroll-animate">
               <h2 className="text-3xl md:text-5xl font-bold text-primary mb-5">О компании FertiGlobal Emirates</h2>
               <div className="w-20 h-1.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
               <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
@@ -162,7 +181,7 @@ const Index = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2">
+              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-1">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                     <Icon name="Building2" className="text-white" size={28} />
@@ -176,7 +195,7 @@ const Index = () => {
                 </div>
               </Card>
 
-              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2">
+              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-2">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                     <Icon name="Globe" className="text-white" size={28} />
@@ -190,7 +209,7 @@ const Index = () => {
                 </div>
               </Card>
 
-              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2">
+              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-3">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                     <Icon name="Ship" className="text-white" size={28} />
@@ -202,7 +221,7 @@ const Index = () => {
                 </div>
               </Card>
 
-              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2">
+              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-4">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                     <Icon name="Shield" className="text-white" size={28} />
@@ -222,7 +241,7 @@ const Index = () => {
 
       <section id="product" className="py-20 bg-gradient-to-b from-muted/20 to-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16 scroll-animate">
             <h2 className="text-3xl md:text-5xl font-bold text-primary mb-5">UralNitro Pro 46</h2>
             <div className="w-20 h-1.5 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
             <p className="text-xl text-muted-foreground font-light">Гранулированная карбамидная мочевина высшего качества</p>
@@ -230,7 +249,7 @@ const Index = () => {
 
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="relative group bg-white rounded-lg p-6">
+              <div className="relative group bg-white rounded-lg p-6 scroll-animate scroll-animate-delay-1">
                 <img 
                   src="https://cdn.poehali.dev/projects/e2337ca5-ae7d-430a-b963-b32567a9167d/files/e243085b-4828-428b-947c-85281843351c.jpg"
                   alt="Urea granules"
@@ -242,7 +261,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <Card className="p-8 md:p-10 border-2 border-accent/30 hover:border-accent/60 transition-all bg-gradient-to-br from-card to-muted/20 shadow-lg">
+              <Card className="p-8 md:p-10 border-2 border-accent/30 hover:border-accent/60 transition-all bg-gradient-to-br from-card to-muted/20 shadow-lg scroll-animate scroll-animate-delay-2">
                 <h3 className="text-3xl font-bold text-primary mb-8">Технические характеристики</h3>
                 <div className="space-y-5">
                   <div className="flex justify-between items-center pb-4 border-b-2 border-border">
@@ -273,7 +292,7 @@ const Index = () => {
               </Card>
             </div>
 
-            <Card className="p-10 bg-gradient-to-br from-primary via-primary/95 to-secondary text-white shadow-2xl border-0">
+            <Card className="p-10 bg-gradient-to-br from-primary via-primary/95 to-secondary text-white shadow-2xl border-0 scroll-animate scroll-animate-delay-3">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center shadow-xl">
                   <Icon name="Droplets" size={36} />
@@ -307,7 +326,7 @@ const Index = () => {
 
       <section id="delivery" className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in">
+          <div className="text-center mb-12 scroll-animate">
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">Условия поставки</h2>
             <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
             <p className="text-lg text-muted-foreground">Прозрачные условия работы с фиксированными сроками</p>
@@ -315,7 +334,7 @@ const Index = () => {
 
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <Card className="p-6 text-center border-t-4 border-accent hover:shadow-xl transition-shadow">
+              <Card className="p-6 text-center border-t-4 border-accent hover:shadow-xl transition-shadow scroll-animate scroll-animate-delay-1">
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="DollarSign" className="text-accent" size={32} />
                 </div>
@@ -323,7 +342,7 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground">за тонну FOB</div>
               </Card>
 
-              <Card className="p-6 text-center border-t-4 border-primary hover:shadow-xl transition-shadow">
+              <Card className="p-6 text-center border-t-4 border-primary hover:shadow-xl transition-shadow scroll-animate scroll-animate-delay-2">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Calendar" className="text-primary" size={32} />
                 </div>
@@ -331,7 +350,7 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground">дней с момента оплаты</div>
               </Card>
 
-              <Card className="p-6 text-center border-t-4 border-secondary hover:shadow-xl transition-shadow">
+              <Card className="p-6 text-center border-t-4 border-secondary hover:shadow-xl transition-shadow scroll-animate scroll-animate-delay-3">
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Package" className="text-secondary" size={32} />
                 </div>
@@ -341,7 +360,7 @@ const Index = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-8">
+              <Card className="p-8 scroll-animate scroll-animate-delay-1">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-accent/10 rounded flex items-center justify-center">
                     <Icon name="TrendingUp" className="text-accent" size={24} />
@@ -366,7 +385,7 @@ const Index = () => {
                 </div>
               </Card>
 
-              <Card className="p-8 relative overflow-hidden">
+              <Card className="p-8 relative overflow-hidden scroll-animate scroll-animate-delay-2">
                 <img 
                   src="https://cdn.poehali.dev/projects/e2337ca5-ae7d-430a-b963-b32567a9167d/files/b8383000-f111-4d2f-bb61-5fc5fc18145f.jpg"
                   alt="Shipping port"
@@ -398,7 +417,7 @@ const Index = () => {
               </Card>
             </div>
 
-            <Card className="mt-8 p-8 bg-gradient-to-r from-accent/10 to-primary/10 border-2 border-accent">
+            <Card className="mt-8 p-8 bg-gradient-to-r from-accent/10 to-primary/10 border-2 border-accent scroll-animate scroll-animate-delay-3">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-accent rounded flex items-center justify-center flex-shrink-0">
                   <Icon name="FileText" className="text-white" size={24} />
@@ -423,13 +442,13 @@ const Index = () => {
       <section id="contact" className="py-16 bg-gradient-to-br from-primary via-secondary to-primary">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12 text-white animate-fade-in">
+            <div className="text-center mb-12 text-white scroll-animate">
               <h2 className="text-2xl md:text-4xl font-bold mb-4">Свяжитесь с нами</h2>
               <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
               <p className="text-lg text-white/90">Готовы обсудить условия поставки азотных удобрений</p>
             </div>
 
-            <Card className="p-8">
+            <Card className="p-8 scroll-animate scroll-animate-delay-1">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
