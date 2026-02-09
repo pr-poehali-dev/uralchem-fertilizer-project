@@ -74,7 +74,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden w-full">
       <nav className="fixed top-0 w-full bg-primary/95 backdrop-blur-sm z-50 border-b border-primary/20">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -94,10 +94,10 @@ const Index = () => {
               <a href="#delivery" className="text-white hover:text-accent transition-colors">Условия</a>
               <a href="#contact" className="text-white hover:text-accent transition-colors">Контакты</a>
             </div>
-            <a href="tel:+79337776062" className="flex items-center gap-1 md:gap-2 text-white hover:text-accent transition-colors">
-              <Icon name="Phone" size={16} className="md:hidden" />
-              <Icon name="Phone" size={18} className="hidden md:block" />
-              <span className="font-semibold text-sm md:text-base">+7 933 777 60 62</span>
+            <a href="tel:+79337776062" className="flex items-center gap-1 md:gap-2 text-white hover:text-accent transition-colors whitespace-nowrap">
+              <Icon name="Phone" size={16} className="md:hidden flex-shrink-0" />
+              <Icon name="Phone" size={18} className="hidden md:block flex-shrink-0" />
+              <span className="font-semibold text-xs md:text-base">+7 933 777 60 62</span>
             </a>
           </div>
         </div>
@@ -141,13 +141,13 @@ const Index = () => {
                 Запросить коммерческое предложение
               </Button>
             </div>
-            <div className="relative animate-scale-in">
+            <div className="relative animate-scale-in max-w-full">
               <img 
                 src="https://cdn.poehali.dev/projects/e2337ca5-ae7d-430a-b963-b32567a9167d/files/6f7ef9f5-24fe-4f48-aee3-1d04c9e73d99.jpg" 
                 alt="Industrial facility"
-                className="rounded-lg shadow-2xl border-4 border-white/20"
+                className="rounded-lg shadow-2xl border-4 border-white/20 w-full h-auto"
               />
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-accent p-3 md:p-6 rounded-lg shadow-xl">
+              <div className="absolute bottom-2 right-2 md:-bottom-6 md:-right-6 bg-accent p-3 md:p-6 rounded-lg shadow-xl">
                 <div className="text-white text-lg md:text-2xl font-bold">От $450</div>
                 <div className="text-white/90 text-xs md:text-sm">за тонну FOB</div>
               </div>
@@ -384,7 +384,7 @@ const Index = () => {
                     <div className="w-12 h-12 bg-primary/90 rounded flex items-center justify-center">
                       <Icon name="Anchor" className="text-white" size={24} />
                     </div>
-                    <h3 className="text-2xl font-bold text-primary">Базис поставки</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-primary">Базис поставки</h3>
                   </div>
                   <div className="space-y-4">
                     <div className="bg-white/90 backdrop-blur-sm p-4 rounded border-l-4 border-primary">
