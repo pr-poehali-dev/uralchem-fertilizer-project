@@ -276,10 +276,9 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="relative group bg-white rounded-lg p-6 scroll-animate scroll-animate-delay-1">
                 <img 
-                  src="https://cdn.poehali.dev/projects/e2337ca5-ae7d-430a-b963-b32567a9167d/files/e243085b-4828-428b-947c-85281843351c.jpg"
+                  src="https://cdn.poehali.dev/projects/e2337ca5-ae7d-430a-b963-b32567a9167d/files/341aefe9-48d3-4d85-b1d7-cb0f236673f6.jpg"
                   alt="Urea granules"
-                  className="rounded-lg w-full h-80 object-contain group-hover:scale-105 transition-transform duration-300"
-                  style={{ mixBlendMode: 'multiply' }}
+                  className="rounded-lg w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="mt-4 text-center">
                   <p className="text-primary font-semibold text-lg">Гранулы белого цвета диаметром 2-4 мм</p>
