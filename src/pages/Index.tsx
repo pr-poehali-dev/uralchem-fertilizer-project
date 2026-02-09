@@ -3,8 +3,9 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const { toast } = useToast();
@@ -181,59 +182,83 @@ const Index = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-1">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
-                    <Icon name="Building2" className="text-white" size={28} />
+              <Link to="/partnership">
+                <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-1 cursor-pointer h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                      <Icon name="Building2" className="text-white" size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Партнерство с УралХим</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Прямые контракты с крупнейшим российским производителем минеральных удобрений
+                      </p>
+                      <div className="flex items-center gap-2 mt-3 text-accent font-medium">
+                        <span>Подробнее</span>
+                        <Icon name="ArrowRight" size={18} />
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary mb-3">Партнерство с УралХим</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Прямые контракты с крупнейшим российским производителем минеральных удобрений
-                    </p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
 
-              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-2">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
-                    <Icon name="Globe" className="text-white" size={28} />
+              <Link to="/registration">
+                <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-2 cursor-pointer h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                      <Icon name="Globe" className="text-white" size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Регистрация в ОАЭ</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Компания зарегистрирована в Дубае с полным пакетом экспортных лицензий
+                      </p>
+                      <div className="flex items-center gap-2 mt-3 text-accent font-medium">
+                        <span>Подробнее</span>
+                        <Icon name="ArrowRight" size={18} />
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary mb-3">Регистрация в ОАЭ</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Компания зарегистрирована в Дубае с полным пакетом экспортных лицензий
-                    </p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
 
-              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-3">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
-                    <Icon name="Ship" className="text-white" size={28} />
+              <Link to="/logistics">
+                <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-3 cursor-pointer h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                      <Icon name="Ship" className="text-white" size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Логистика FOB</h3>
+                      <p className="text-muted-foreground leading-relaxed">Отгрузка из порта Санкт-Петербург и Новороссийск с полным документальным сопровождением</p>
+                      <div className="flex items-center gap-2 mt-3 text-accent font-medium">
+                        <span>Подробнее</span>
+                        <Icon name="ArrowRight" size={18} />
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary mb-3">Логистика FOB</h3>
-                    <p className="text-muted-foreground leading-relaxed">Отгрузка из порта Санкт-Петербург и Новороссийск с полным документальным сопровождением</p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
 
-              <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
-                    <Icon name="Shield" className="text-white" size={28} />
+              <Link to="/quality">
+                <Card className="p-8 border-2 border-border hover:border-accent/50 hover:shadow-2xl transition-all duration-300 group bg-card hover:-translate-y-2 scroll-animate scroll-animate-delay-4 cursor-pointer h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/80 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                      <Icon name="Shield" className="text-white" size={28} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Гарантии качества</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Сертификаты соответствия и лабораторные анализы для каждой партии
+                      </p>
+                      <div className="flex items-center gap-2 mt-3 text-accent font-medium">
+                        <span>Подробнее</span>
+                        <Icon name="ArrowRight" size={18} />
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary mb-3">Гарантии качества</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Сертификаты соответствия и лабораторные анализы для каждой партии
-                    </p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </Link>
             </div>
           </div>
         </div>
