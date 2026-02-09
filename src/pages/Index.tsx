@@ -114,7 +114,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-white animate-fade-in">
               <div className="inline-block px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full mb-6">
-                <span className="text-accent font-semibold">🇦🇪 Поставки из ОАЭ</span>
+                <span className="text-accent font-semibold">Поставки из России</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                 Азотные удобрения<br />
