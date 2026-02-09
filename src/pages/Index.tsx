@@ -322,7 +322,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="DollarSign" className="text-accent" size={32} />
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-accent mb-2">$450</div>
+                <div className="text-3xl md:text-4xl font-bold text-accent mb-2">от $330</div>
                 <div className="text-sm text-muted-foreground">за тонну FOB</div>
               </Card>
 
